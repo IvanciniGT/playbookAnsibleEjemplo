@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+    ansible-test:
+        # Así no lo haremos nunca
+        # image: miansible:latest
+        build:
+            context: ..
+        container_name: ansible-test
+#        command: 
+#            - sh
+#            - -c 
+#            - tail -f /dev/null
+    ansible-test-2:
+        build:
+            context: ..
+        container_name: ansible-test2
+        volumes:
+        - ../../ansible:/data
